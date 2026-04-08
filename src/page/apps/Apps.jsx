@@ -3,6 +3,7 @@ import { FaRegStar } from 'react-icons/fa';
 import { MdDownload } from 'react-icons/md';
 import useApp from '../../hook/useApp';
 import navImg from '../../assets/images/logo.png'
+import { Link } from 'react-router';
 
 const Apps = () => {
     const { storeData, loading } = useApp();
@@ -56,7 +57,7 @@ const Apps = () => {
                     {
                         storeData.map(data => {
                             return (
-                                <div key={data.id} className="card bg-base-100 w-96 shadow-sm">
+                                <Link to={`/apps/${data.id}`} key={data.id} className="card bg-base-100 w-96 shadow-sm">
                                     <figure className="px-10 pt-10">
                                         <img
                                             src={data.image}
@@ -77,7 +78,7 @@ const Apps = () => {
 
                                         </div>
                                     </div>
-                                </div>
+                                </Link>
                             )
                         }
                         )

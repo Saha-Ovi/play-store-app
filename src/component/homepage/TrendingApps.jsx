@@ -7,6 +7,7 @@ import navImg from '../../assets/images/logo.png'
 
 const TrendingApps = () => {
     const { storeData, loading } = useApp();
+
     // const [storeData, setStoreData] = useState([]);
 
     // useEffect(() => {
@@ -37,7 +38,7 @@ const TrendingApps = () => {
                             {
                                 storeData.slice(0, 9).map(data => {
                                     return (
-                                        <div key={data.id} className="card bg-base-100 w-96 shadow-sm">
+                                        <Link to={`/apps/${data.id}`} key={data.id} className="card bg-base-100 w-96 shadow-sm">
                                             <figure className="px-10 pt-10">
                                                 <img
                                                     src={data.image}
@@ -58,7 +59,7 @@ const TrendingApps = () => {
 
                                                 </div>
                                             </div>
-                                        </div>
+                                        </Link>
                                     )
                                 }
                                 )
